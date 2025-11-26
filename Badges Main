@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Badges</title>
+    <style>
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .badge {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            width: 160px;
+        }
+        .badge img {
+            width: 64px;
+            height: 64px;
+        }
+        .badge-name {
+            margin: 8px 0 4px 0;
+            font-weight: bold;
+        }
+        .badge-description {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Badges</h1>
+    <div class="badges-container">
+        <div class="badge">
+            <img src="badge1.png" alt="Badge 1">
+            <div class="badge-name">Super Starter</div>
+            <div class="badge-description">Completed your first event!</div>
+        </div>
+        <div class="badge">
+            <img src="badge2.png" alt="Badge 2">
+            <div class="badge-name">Fast Learner</div>
+            <div class="badge-description">Finished a course in record time.</div>
+        </div>
+        <!-- More badges... -->
+    </div>
+</body>
+</html>
