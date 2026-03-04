@@ -1,4 +1,4 @@
-// ChatGPT-like response formatting in public/chat.js
+// ChatGPT-like response formatting in public/chat.js okay.
 
 function formatResponse(message) {
     let formatted = '';
