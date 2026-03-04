@@ -113,7 +113,11 @@ async function sendMessage() {
           if (jsonData.response) {
             // Append new content to existing text
             responseText += jsonData.response;
-            assistantMessageEl.querySelector("p").textContent = responseText;
+            // Convert line breaks to <br> tags and preserve formatting
+            const formattedText = responseText
+              .replace(/\n\n/g, "</p><p>") // Double line breaks become paragraph breaks
+              .replace(/\n/g, "<br>"); // Single line breaks become <br>
+            assistantMessageEl.querySelector("p").innerHTML = formattedText;
 
             // Scroll to bottom
             chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -150,7 +154,11 @@ async function sendMessage() {
 function addMessageToChat(role, content) {
   const messageEl = document.createElement("div");
   messageEl.className = `message ${role}-message`;
-  messageEl.innerHTML = `<p>${content}</p>`;
+  // Convert line breaks to <br> tags and preserve formatting
+  const formattedContent = content
+    .replace(/\n\n/g, "</p><p>") // Double line breaks become paragraph breaks
+    .replace(/\n/g, "<br>"); // Single line breaks become <br>
+  messageEl.innerHTML = `<p>${formattedContent}</p>`;
   chatMessages.appendChild(messageEl);
 
   // Scroll to bottom
